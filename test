@@ -1,0 +1,54 @@
+<?php
+// Iniciar sessão para armazenar as notas temporariamente
+session_start();
+
+// Verificar se o array de notas existe na sessão
+if (!isset($_SESSION['notes'])) {
+    $_SESSION['notes'] = [];
+}
+
+// Adicionar uma nova nota
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['note'])) {
+    $note = trim($_POST['note']);
+    if (!empty($note)) {
+        $_SESSION['notes'][] = $note;
+    }
+}
+
+// Excluir uma nota
+if (isset($_GET['delete'])) {
+    $noteIndex = $_GET['delete'];
+    if (isset($_SESSION['notes'][$noteIndex])) {
+        unset($_SESSION['notes'][$noteIndex]);
+        // Reindexar o array
+        $_SESSION['notes'] = array_values($_SESSION['notes']);
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Aplicação de Notas</h1>
+    <form method="POST" action="">
+        <input type="text" name="note" placeholder="Nova nota" required>
+        <button type="submit">Adicionar</button>
+    </form>
+    <h2>Notas</h2>
+    <div>
+        <?php foreach ($_SESSION['notes'] as $index => $note): ?>
+            <div class="note">
+                <p><?= htmlspecialchars($note) ?></p>
+                <form method="GET" action="" style="margin: 0;">
+                    <button type="submit" name="delete" value="<?= $index ?>">Excluir</button>
+                </form>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</body>
+</html>

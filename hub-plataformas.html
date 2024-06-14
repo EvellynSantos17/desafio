@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        header .search input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        
+        header .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        aside {
+            background-color: #eeeeee;
+            padding: 20px;
+            width: 200px;
+        }
+        
+        aside nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        aside nav ul li {
+            margin-bottom: 10px;
+        }
+        
+        aside nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .platform-grid, .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .platform, .tool {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .platform img, .tool img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #002244;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">INCI</div>
+            <div class="search">
+                <input type="text" placeholder="Pesquisar">
+            </div>
+            <div class="profile-icon">
+                <img src="profile-icon.png" alt="Profile">
+            </div>
+        </header>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Alunos</a></li>
+                    <li><a href="#">Pagamentos</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <section class="platforms">
+                <h2>Nossas Plataformas</h2>
+                <div class="platform-grid">
+                    <div class="platform">
+                        <img src="SEducador.png" alt="SEducador">
+                        <button>Entrar</button>
+                    </div>
+                    <div class="platform">
+                        <img src="Estetus.png" alt="Estetus">
+                        <button>Entrar</button>
+                    </div>
+                    <div class="platform">
+                        <img src="Eduhot.png" alt="Eduhot">
+                        <button>Entrar</button>
+                    </div>
+                    <div class="platform">
+                        <img src="Edocker.png" alt="Edocker">
+                        <button>Entrar</button>
+                    </div>
+                    <div class="platform">
+                        <img src="EducDay.png" alt="EducDay">
+                        <button>Entrar</button>
+                    </div>
+                    <div class="platform">
+                        <img src="Zamplify.png" alt="Zamplify">
+                        <button>Entrar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="tools">
+                <h2>Principais Ferramentas</h2>
+                <div class="tool-grid">
+                    <div class="tool">
+                        <img src="Gmail.png" alt="E-Mail">
+                        <button>Entrar</button>
+                    </div>
+                    <div class="tool">
+                        <img src="Jira.png" alt="Jira">
+                        <button>Entrar</button>
+                    </div>
+                    <div class="tool">
+                        <img src="Asana.png" alt="Asana">
+                        <button>Entrar</button>
+                    </div>
+                    <div class="tool">
+                        <img src="GoogleDrive.png" alt="Google Drive">
+                        <button>Entrar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

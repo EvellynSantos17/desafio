@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .loading-container {
+            text-align: center;
+        }
+        .loading-container img {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        .loading-container p {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <img src="logo.png" alt="Logo">
+        <p>Carregando...</p>
+    </div>
+    <script>
+        setTimeout(function() {
+            window.location.href = 'hub-plataformas.html';
+        }, 2000);
+    </script>
+</body>
+</html>

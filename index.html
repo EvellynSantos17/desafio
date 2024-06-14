@@ -1,31 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>INCI - Preparando Pessoas para o Futuro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .container {
+            display: flex;
+            height: calc(100vh - 80px);
+        }
+        .left-section, .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+        .left-section {
+            background-color: #fff;
+        }
+        .right-section {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .right-section div {
+            margin: 20px 0;
+        }
+        input[type="email"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn-primary, .btn1, .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover, .btn1:hover, .btn:hover {
+            background-color: #0056b3;
+        }
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .testimonial {
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 500px;
+        }
+    </style>
 </head>
 <body>
     <header>
+        <img src="img\logo.png" alt="INCI Logo">
         <nav>
-            <img src="img/logo.png" alt=""> 
-            <img scr="img/pincil.png" alt="">
-            <img scr="img/pessoas.png" alt="">
-            <img scr="img/logo.png" alt="">
-            <a href=""></a>
+            <a href="#">Nossos Serviços</a>
+            <a href="#">Quem Somos?</a>
+            <a href="#">Nosso Time</a>
         </nav>
-
+        <div>
+            <a class="btn1" href="#">Trabalhe Conosco</a>
+            <a href="login.html" class="btn">Entrar</a>
+        </div>
     </header>
-    <main>
-        <section id="intro">
-            <!-- Conteúdo da seção introdução -->
-        </section>
-        <!-- Outras seções -->
-    </main>
-    <footer>
-        <!-- Rodapé -->
-    </footer>
-    <script src="js/scripts.js"></script>
+    <div class="container">
+        <div class="left-section">
+            <h1>Preparando Pessoas para o Futuro</h1>
+            <p>Soluções educacionais para a formação e desenvolvimento de pessoas e instituições.</p>
+            <form>
+                <input type="email" placeholder="seuemail@gmail.com">
+                <button type="submit" class="btn-primary">Entrar em contato</button>
+            </form>
+            <p>+11.8 mil de Alcance</p>
+        </div>
+        <div class="right-section">
+            <div class="testimonials">
+                <div class="testimonial">Tudo muito atual e bem didático - Maria da Silva</div>
+                <div class="testimonial">Excelente a plataforma de cursos - Ernesto Almeida</div>
+                <div class="testimonial">Professores excelentes, realmente dominam o assunto - Manuel Lopes</div>
+                <div class="testimonial">São recursos que aceleram o crescimento da nossa empresa - Carla Santos</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

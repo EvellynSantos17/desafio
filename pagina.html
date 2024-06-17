@@ -24,12 +24,28 @@
         .loading-container p {
             font-size: 1.5em;
         }
+        .header {
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="img/logo.png" alt="Logo" width="125" height="70">
+    </div>
     <div class="loading-container">
-        <img src="logo.png" alt="Logo">
-        <p>Carregando...</p>
+        <img src="img/Loading.png" alt="Loading">
+        <p>Fazendo login...</p>
     </div>
     <script>
         setTimeout(function() {

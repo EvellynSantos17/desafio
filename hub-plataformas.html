@@ -10,181 +10,319 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            transition: margin-left 0.3s;
         }
-        
+
         .container {
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            min-height: 100vh;
         }
-        
+
         header {
-            background-color: #003366;
+            background-color: #0C228F;
             color: white;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         header .logo {
+            display: flex;
+            align-items: center;
             font-size: 24px;
             font-weight: bold;
         }
-        
-        header .search input {
+
+        header .logo img {
+            margin-right: 10px;
+            border-radius: 10%;
+        }
+
+        header .pesquisar {
+            display: flex;
+            align-items: center;
+        }
+
+        header .pesquisar input {
             padding: 5px;
             font-size: 16px;
         }
-        
-        header .profile-icon img {
+
+        header .pesquisar img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
+            margin-left: 10px;
         }
-        
+
         aside {
             background-color: #eeeeee;
             padding: 20px;
             width: 200px;
+            transition: width 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        aside.hidden {
+            width: 60px;
+        }
+
         aside nav ul {
             list-style: none;
             padding: 0;
         }
-        
+
         aside nav ul li {
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
         }
-        
+
+        aside nav ul li img {
+            margin-right: 10px;
+            transition: margin-right 0.3s;
+        }
+
+        aside.hidden nav ul li img {
+            margin-right: 0;
+        }
+
         aside nav ul li a {
             text-decoration: none;
             color: #333;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: width 0.3s;
         }
-        
+
+        aside.hidden nav ul li a {
+            width: 0;
+        }
+
         main {
             flex: 1;
             padding: 20px;
+            transition: margin-left 0.3s;
         }
-        
+
+        main.shifted {
+            margin-left: 60px;
+        }
+
         section {
             margin-bottom: 40px;
         }
-        
+
         h2 {
             font-size: 24px;
             margin-bottom: 20px;
         }
-        
+
+        span {
+            color: #ABACAD;
+            font-size: 15px;
+        }
+
         .platform-grid, .tool-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
         }
-        
+
         .platform, .tool {
             background-color: white;
             border: 1px solid #ddd;
             padding: 20px;
             text-align: center;
             border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        
+
         .platform img, .tool img {
             max-width: 100px;
             margin-bottom: 10px;
         }
-        
+
         button {
             padding: 10px 20px;
-            background-color: #003366;
+            background-color: #0C228F;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        
+
         button:hover {
-            background-color: #002244;
+            background-color: #0A1B73;
         }
-        
+
+        .toggle-icon {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            background-color: #0C228F;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .toggle-icon img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hidden .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .header-links {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .header-links ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-links ul li {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .header-links ul li img {
+            margin-right: 5px;
+        }
+
+        .header-links ul li a {
+            color: white;
+            text-decoration: none;
+        }
     </style>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">INCI</div>
-            <div class="search">
-                <input type="text" placeholder="Pesquisar">
+            <div class="logo">
+                <img src="img/amarelo.png" width="45px" height="45px" alt="Logo">
+                INCI
+                <div class="header-links">
+                    <span>Suas funções mais utilizadas:</span>
+                    <nav>
+                        <ul>
+                            <li><img src="img/lupa.png" alt=""><a href="#">Analytics</a></li>
+                            <li><img src="img/quadrado.png" alt=""><a href="#">Cursos</a></li>
+                            <li><img src="img/people.png" alt="" width="22px" height="22px"><a href="#">Alunos</a></li>
+                            <li><img src="img/sifrão.png" alt=""><a href="#">Pagamentos</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="profile-icon">
-                <img src="profile-icon.png" alt="Profile">
+            <div class="pesquisar">
+                <input type="text" placeholder="Pesquisar">
+                <img src="img/Avatar.png" alt="Profile">
             </div>
         </header>
-        <aside>
-            <nav>
-                <ul>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Cursos</a></li>
-                    <li><a href="#">Alunos</a></li>
-                    <li><a href="#">Pagamentos</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <main>
-            <section class="platforms">
-                <h2>Nossas Plataformas</h2>
-                <div class="platform-grid">
-                    <div class="platform">
-                        <img src="SEducador.png" alt="SEducador">
-                        <button>Entrar</button>
-                    </div>
-                    <div class="platform">
-                        <img src="Estetus.png" alt="Estetus">
-                        <button>Entrar</button>
-                    </div>
-                    <div class="platform">
-                        <img src="Eduhot.png" alt="Eduhot">
-                        <button>Entrar</button>
-                    </div>
-                    <div class="platform">
-                        <img src="Edocker.png" alt="Edocker">
-                        <button>Entrar</button>
-                    </div>
-                    <div class="platform">
-                        <img src="EducDay.png" alt="EducDay">
-                        <button>Entrar</button>
-                    </div>
-                    <div class="platform">
-                        <img src="Zamplify.png" alt="Zamplify">
-                        <button>Entrar</button>
-                    </div>
+        <div style="display: flex; flex: 1;">
+            <aside id="sidebar">
+                <div class="toggle-icon" onclick="toggleMenu()">
+                    <img src="img/Container (5).png" alt="Toggle Menu">
                 </div>
-            </section>
-            <section class="tools">
-                <h2>Principais Ferramentas</h2>
-                <div class="tool-grid">
-                    <div class="tool">
-                        <img src="Gmail.png" alt="E-Mail">
-                        <button>Entrar</button>
+                <nav>
+                    <ul>
+                        <li><img src="img/casinha.png" alt=""><a href="#">Início</a></li>
+                        <li><img src="img/people.png" alt="" width="22px" height="22px"><a href="#">Alunos</a></li>
+                        <li><img src="img/sifrão.png" alt=""><a href="#">Pagamentos</a></li>
+                        <li><img src="img/quadrado.png" alt=""><a href="#">Cursos</a></li>
+                        <li><img src="img/interrogação.png" alt=""><a href="#">Central de Ajuda</a></li>
+                        <li><img src="img/medalinha.png" alt=""><a href="#">Ferramentas</a></li>
+                        <li><img src="img/escada.png" alt=""><a href="#">Recursos</a></li>
+                        <li><img src="img/lupa.png" alt=""><a href="#">Analytics</a></li>
+                        <li><img src="img/som.png" alt=""><a href="#">Whats Push</a></li>
+                        <li><img src="img/config.png" alt=""><a href="#">Central de Ajuda</a></li>
+                        <li><img src="img/off.png" alt=""><a href="index.html">Sair</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <main id="main-content">
+                <section class="platforms">
+                    <h2>Nossas Plataformas</h2>
+                    <span>Escolha o ícone para entrar</span>
+                    <div class="platform-grid">
+                        <div class="platform">
+                            <img src="img/sóEducador.png" alt="SEducador">
+                            <button>Entrar</button>
+                        </div>
+                        <div class="platform">
+                            <img src="img/estetus.png" alt="Estetus">
+                            <button>Entrar</button>
+                        </div>
+                        <div class="platform">
+                            <img src="img/eduhot.png" alt="Eduhot">
+                            <button>Entrar</button>
+                        </div>
+                        <div class="platform">
+                            <img src="img/edooker.png" alt="Edocker">
+                            <button>Entrar</button>
+                        </div>
+                        <div class="platform">
+                            <img src="img/educday.png" alt="EducDay">
+                            <button>Entrar</button>
+                        </div>
+                        <div class="platform">
+                            <img src="img/zamply.png" alt="Zamplify">
+                            <button>Entrar</button>
+                        </div>
                     </div>
-                    <div class="tool">
-                        <img src="Jira.png" alt="Jira">
-                        <button>Entrar</button>
+                </section>
+                <section class="tools">
+                    <h2>Principais Ferramentas</h2>
+                    <div class="tool-grid">
+                        <div class="tool">
+                            <img src="img/e-mail.png" alt="E-Mail">
+                            <button>Entrar</button>
+                        </div>
+                        <div class="tool">
+                            <img src="img/jira.png" alt="Jira">
+                            <button>Entrar</button>
+                        </div>
+                        <div class="tool">
+                            <img src="img/asana.png" alt="Asana">
+                            <button>Entrar</button>
+                        </div>
+                        <div class="tool">
+                            <img src="img/Drive.png" alt="Google Drive">
+                            <button>Entrar</button>
+                        </div>
                     </div>
-                    <div class="tool">
-                        <img src="Asana.png" alt="Asana">
-                        <button>Entrar</button>
-                    </div>
-                    <div class="tool">
-                        <img src="GoogleDrive.png" alt="Google Drive">
-                        <button>Entrar</button>
-                    </div>
-                </div>
-            </section>
-        </main>
+                </section>
+            </main>
+        </div>
     </div>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('main-content');
+            sidebar.classList.toggle('hidden');
+            mainContent.classList.toggle('shifted');
+        }
+    </script>
 </body>
 </html>

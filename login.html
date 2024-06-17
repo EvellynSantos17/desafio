@@ -8,33 +8,71 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; 
             margin: 0;
             background-color: #f4f4f4;
         }
+
         .login-container {
             background-color: white;
-            padding: 20px;
+            padding: 40px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             text-align: center;
+            max-width: 400px; 
+            width: 100%;
+            margin-top: 120px; /* Adicionado para espaçamento entre o cabeçalho e o contêiner */
         }
+
+        .titulo {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .ol {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .ol p {
+            font-size: 17px;
+            margin: 5px 0 0 0;
+        }
+
         .login-container img {
             height: 50px;
             margin-bottom: 20px;
         }
+
+        .login-container hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
         .login-container form {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
+
+        .login-container label {
+            align-self: flex-start;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
         .login-container input {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         .login-container .btn {
             background-color: #007BFF;
             color: white;
@@ -43,18 +81,71 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         .login-container .btn:hover {
             background-color: #0056b3;
+        }
+
+        .login-container a {
+            align-self: flex-start;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 10px 0; 
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .center{
+            text-align: center;
+            color: #007BFF;
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="img/logo.png" alt="Logo" width="125" height="70">
+    </div>
+    
     <div class="login-container">
-        <img src="logo.png" alt="Logo">
+        <div class="titulo">
+            <div class="ol">
+                <h1>Fazer Login</h1>
+                <p>Use sua Conta INCI</p>
+            </div>
+            <img src="img/amarelo.png" alt="Logo">
+        </div>
+        <hr>
         <form id="login-form">
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Senha" required>
+            <label for="email">E-mail ou telefone</label>
+            <input type="email" id="email" placeholder="thiago@zamply.com" required>
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="********" required>
+            <a href="#">Esqueci a senha</a>
+
+            <label>Não está no seu computador? Use o modo visitante para fazer login com privacidade.</label>
+            <div class="center"
+                <a href="#">Saiba mais</a>
+            </div>
             <button type="submit" class="btn">Entrar</button>
+            <div class="center">
+                <a href="#">Criar Conta</a>
+            </div>
         </form>
     </div>
     <script>
